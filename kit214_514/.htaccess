@@ -1,0 +1,49 @@
+RewriteEngine On
+
+# Redirect requests to PHP files in the "views" directory
+RewriteRule ^$ views/home.php [L]
+RewriteRule ^home$ views/home.php [L]
+RewriteRule ^permission$ views/permission.php [L]
+RewriteRule ^access-log$ views/access_log.php [L]
+RewriteRule ^discord-account-link$ views/discord_account_link.php [L]
+RewriteRule ^archive$ views/archive.php [L]
+RewriteRule ^login$ views/login.php [L]
+RewriteRule ^discord-oauth$ views/discord_oauth.php [L]
+RewriteRule ^register$ views/register.php [L]
+RewriteRule ^create$ views/create.php [L]
+RewriteRule ^about$ views/about.php [L]
+RewriteRule ^search$ views/search.php [L]
+RewriteRule ^test$ views/test.php [L]
+
+# Prevent direct access to PHP files in the directory
+RewriteCond %{THE_REQUEST} /views/.*\.php [NC]
+RewriteRule ^ - [F]
+
+RewriteCond %{THE_REQUEST} /model/.*\.php [NC]
+RewriteRule ^ - [F]
+
+RewriteCond %{THE_REQUEST} /controller/.*\.php [NC]
+RewriteRule ^ - [F]
+
+RewriteCond %{THE_REQUEST} /config/.*\.php [NC]
+RewriteRule ^ - [F]
+
+# Redirect unknown URLs to forbidden.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ views/forbidden.php [L]
+
+# Hide a specific file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Hide a specific file
+<Files .env.example>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Catch all other routes and display a 403 error page
+# RewriteRule ^ - [F]

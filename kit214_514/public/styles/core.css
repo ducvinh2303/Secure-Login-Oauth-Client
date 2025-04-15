@@ -1,0 +1,97 @@
+/* Reset margin, padding, and box-sizing */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set default font and background color for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    /* Change the font-family as needed */
+    color: #333;
+    /* Default text color */
+    background-color: #fff;
+    /* Default background color */
+    line-height: 1.6;
+    /* Spacing between lines */
+}
+
+/* Styling for headings h1 to h6 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24.5px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+h5 {
+    font-size: 17.5px;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+/* Styling for links */
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* Styling for lists */
+ul,
+ol {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+/* Styling for paragraphs */
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styling for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Responsive styling for images */
+img {
+    max-width: 100%;
+    height: auto;
+}
